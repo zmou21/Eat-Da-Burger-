@@ -9,15 +9,17 @@
       });
     },
     // The variables cols and vals are arrays.
-    insertOne: function(table, cols, vals, cb) {
+    insertOne: function(cols, vals, cb) {
       orm.insertOne("burgers", cols, vals, function(res) {
-        console.log("burger added ... burger.js");
+        //console.log("burger added ... burger.js");
 
         cb(res);
       });
     },
     updateOne: function(objColVals, condition, cb) {
       orm.updateOne("burgers", objColVals, condition, function(res) {
+        console.log("burger devoured .. burger.js");
+        console.log(objColVals);
         cb(res);
       });
     }
