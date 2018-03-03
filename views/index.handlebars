@@ -7,9 +7,9 @@
       {{#unless devoured}}
         <li>
           <p>
-            {{burger_name}}
-            <button class="change-burger" data-id="{{id}}" data-eat="{{eat}}">
-              {{#if devoured}}That was delicious!{{else}}DEVOUR!{{/if}}
+            {{burger_name devoured=false}}
+            <button class="change-burger" data-id="{{id}}" data-eat="{{devoured}}">
+              {{#if devoured}}DEVOUR!{{else}}DEVOUR{{/if}}
             </button>
           </p>
         </li>
@@ -25,7 +25,7 @@
       {{#if devoured}}
         <li>
           <p>
-            {{burger_name}}
+            {{burger_name devoured=true}}
           </p>
         </li>
       {{/if}}
@@ -61,12 +61,15 @@
         eat: devoured
       };
 
+      console.log(devoured);
+
       // Send the PUT request.
       $.ajax("/api/burgers/" + id, {
         type: "PUT",
         data: eat
       }).then(
         function() {
+          console.log("burger devoured .. handlebar");
           console.log("changed devoured to", eat);
           // Reload the page to get the updated list
           location.reload();
