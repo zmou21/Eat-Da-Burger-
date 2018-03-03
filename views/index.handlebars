@@ -2,35 +2,32 @@
 
   <h2>Ready to be Eaten</h2>
 
-  <ul>
+  <div class="burger-noteat">
     {{#each burger_name}}
       {{#unless devoured}}
-        <li>
-          <p>
-            {{burger_name devoured=false}}
-            <button class="change-burger" data-id="{{id}}" data-eat="{{devoured}}">
-              {{#if devoured}}DEVOUR!{{else}}DEVOUR{{/if}}
-            </button>
-          </p>
-        </li>
+        <div id="burger">
+          {{burger_name}}
+        </div>
+        <button class="change-burger" data-id="{{id}}" data-eat="{{devoured}}">
+          {{#if devoured}}DEVOUR!{{else}}DEVOUR{{/if}}
+        </button>
       {{/unless}}
     {{/each}}
-  </ul>
+  </div>
+
 
 
   <h2>Devoured!</h2>
 
-  <ul>
+  <div class="burger-eat">
     {{#each burger_name}}
       {{#if devoured}}
-        <li>
-          <p>
-            {{burger_name devoured=true}}
-          </p>
-        </li>
+        <p>
+          {{burger_name}}
+        </p>
       {{/if}}
     {{/each}}
-  </ul>
+  </div>
 
   <h2>Add a Burger</h2>
   <form class="create-form">
@@ -56,7 +53,7 @@
     $(".change-burger").on("click", function(event) {
       var id = $(this).data("id");
       var devoured = $(this).data("eat");
-
+      //devoured = true;
       var eat = {
         eat: devoured
       };
