@@ -52,16 +52,16 @@ var orm = {
     queryString += cols;
     queryString += ") ";
     queryString += "VALUES (";
-    queryString += vals;
+    queryString += printQuestionMarks(vals.length);
     queryString += ") ";
 
     console.log(queryString);
 
-    connection.query(queryString, function(err, result) {
+    connection.query(queryString, vals, function(err, result) {
       if (err) {
         throw err;
       }
-      console.log("burger added ... orm.js");
+      //console.log("burger added ... orm.js");
       cb(result);
     });
   },
@@ -78,7 +78,7 @@ var orm = {
       if (err) {
         throw err;
       }
-
+      console.log("burger devoured .. handlebar");
       cb(result);
     });
   }
