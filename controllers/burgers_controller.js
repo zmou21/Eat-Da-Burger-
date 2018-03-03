@@ -25,9 +25,8 @@
       req.body.burger_name
     ], function(result) {
       // Send back the ID of the new quote
-      console.log("burger added ... controller.js");
-      console.log(result);
-      res.json({ burger_name: result  });
+      //console.log("burger added ... controller.js");
+      res.json({ burger_name: result.insertId });
     });
   });
 
@@ -37,12 +36,13 @@
     console.log("condition", condition);
 
     burger.updateOne({
-      burger_name: req.body.burger_name
+      devoured: req.body.devoured
     }, condition, function(result) {
       if (result.changedRows == 0) {
         // If no rows were changed, then the ID must not exist, so 404
         return res.status(404).end();
       } else {
+        console.log("burger devoured .. handlebar");
         res.status(200).end();
       }
     });
