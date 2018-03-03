@@ -1,3 +1,7 @@
+body{
+  background-color: yellow;
+}
+
 li {
   padding: 5px;
   margin: 5px;
@@ -18,13 +22,23 @@ li {
   margin-bottom: 5px;
 }
 
+.header {
+  text-align: center;
+}
+
 .burger-noteat {
   width: 200px;
   display: inline;
-
 }
 
 .burger-eat {
   width: 200px;
   display: inline;
+}
+
+.burger{
+  background-color: white;
+  width: 80%;
+  padding: 2%;
+  margin: 2%;
 }
