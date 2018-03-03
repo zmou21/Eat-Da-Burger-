@@ -17,3 +17,14 @@ li {
 .form-group {
   margin-bottom: 5px;
 }
+
+.burger-noteat {
+  width: 200px;
+  display: inline;
+
+}
+
+.burger-eat {
+  width: 200px;
+  display: inline;
+}

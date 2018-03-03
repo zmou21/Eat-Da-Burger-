@@ -1,53 +1,59 @@
-  <h1>Eat Da Burger</h1>
 
-  <h2>Ready to be Eaten</h2>
 
-  <div class="burger-noteat">
-    {{#each burger_name}}
-      {{#unless devoured}}
-        <div id="burger">
-          {{burger_name}}
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-12 header">
+      <h1>Eat Da Burger</h1>
+
+      <h2>Ready to be Eaten</h2>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-6">
+      <div class="burger-noteat">
+        {{#each burger_name}}
+          {{#unless devoured}}
+            <div id="burger">
+              {{burger_name}}
+            </div>
+            <button class="change-burger" data-id="{{id}}" data-eat="{{devoured}}">
+              DEVOUR
+            </button>
+          {{/unless}}
+        {{/each}}
+      </div>
+    </div>
+      <div class="col-md-6">
+        <div class="burger-eat">
+          <h2>Devoured!</h2>
+          {{#each burger_name}}
+            {{#if devoured}}
+              <p>
+                {{burger_name}}
+              </p>
+            {{/if}}
+          {{/each}}
         </div>
-        <button class="change-burger" data-id="{{id}}" data-eat="{{devoured}}">
-          {{#if devoured}}DEVOUR!{{else}}DEVOUR{{/if}}
-        </button>
-      {{/unless}}
-    {{/each}}
-  </div>
-
-
-
-  <h2>Devoured!</h2>
-
-  <div class="burger-eat">
-    {{#each burger_name}}
-      {{#if devoured}}
-        <p>
-          {{burger_name}}
-        </p>
-      {{/if}}
-    {{/each}}
-  </div>
-
-  <h2>Add a Burger</h2>
-  <form class="create-form">
-
-    <div class="form-group">
-      <label for="ca">Burger Name:</label>
-      <!-- <input type="text" id="ca" name="name"> -->
-      <textarea name="name" id="ca" rows="8" cols="40"></textarea>
+      </div>
     </div>
 
-    <!-- <div class="form-group">
-      <label for="slee">Devoured?</label><br>
-      <input type="radio" name="devoured" value="1" checked> Eat!<br>
-      <input type="radio" name="devoured" value="0"> I'm Not Hungry
-    </div> -->
+    <div class="row">
+      <div class="col-md-12">
+        <h2>Add a Burger</h2>
+        <form class="create-form">
+          <div class="form-group">
+            <label for="ca">Burger Name:</label>
+            <!-- <input type="text" id="ca" name="name"> -->
+            <textarea name="name" id="ca" rows="8" cols="40"></textarea>
+          </div>
+          <button type="submit">Add Burger</button>
+        </form>
+      </div>
+    </div>
+  </div>
 
-    <button type="submit">Add Burger</button>
-  </form>
-
-
+  <!-- Javascript functionality -->
   <script>
   $(function() {
     $(".change-burger").on("click", function(event) {
