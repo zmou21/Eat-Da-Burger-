@@ -47,9 +47,43 @@
     width: 80%;
     padding: 2%;
     margin: 2%;
+    text-align: center;
+    border-radius: 5px;
+  }
+
+  .burger-devoured{
+    background-color: #777;
+    width: 80%;
+    height: 10%;
+    padding: 2%;
+    margin: 2%;
+    text-align: center;
+    border-radius: 5px;
+    color: darkgrey;
   }
 
   .add-burger{
     position: relative;
     left: 20%;
+  }
+/* h2 text */
+  #eat{
+    position: relative;
+    left: 18%;
+  }
+
+  #yummy {
+    position: relative;
+    left: 25%;
+  }
+
+  #eaten{
+    margin-top: 2%;
+    position: relative;
+    left: 15%;
+  }
+
+  .create-form{
+    position: relative;
+    left: 7%
   }
