@@ -5,35 +5,35 @@
   <div class="row">
     <div class="col-md-12 header">
       <h1>Eat Da Burger</h1>
-
-      <h2>Ready to be Eaten</h2>
+      <!-- <img src="../public/assets/images/hamburger_2.jpeg" alt="hamburger"> -->
+      <img src="http://www.stickpng.com/assets/images/5882488ae81acb96424ffaaf.png" alt="hamburger" width="222" height="200">
     </div>
   </div>
   <div class="row">
-    <div class="col-md-6">
-      <div class="burger-noteat">
-        {{#each burger_name}}
-          {{#unless devoured}}
-            <div id="burger">
-              {{burger_name}}
-            </div>
-            <button class="change-burger" data-id="{{id}}" data-eat="{{devoured}}">
-              DEVOUR
-            </button>
-          {{/unless}}
-        {{/each}}
-      </div>
+    <div class="col-md-6 burger-noteat">
+      {{#each burger_name}}
+        {{#unless devoured}}
+          <div class="burger">
+            {{burger_name}}
+          </div>
+          <button class="change-burger" data-id="{{id}}" data-eat="{{devoured}}">
+            DEVOUR
+          </button>
+        {{/unless}}
+      {{/each}}
     </div>
       <div class="col-md-6">
         <div class="burger-eat">
-          <h2>Devoured!</h2>
-          {{#each burger_name}}
-            {{#if devoured}}
-              <p>
-                {{burger_name}}
-              </p>
-            {{/if}}
-          {{/each}}
+          <h2>Devoured </h2>
+            {{#each burger_name}}
+              <div class="burger">
+                {{#if devoured}}
+                  <p>
+                    {{burger_name}}
+                  </p>
+                {{/if}}
+              </div>
+            {{/each}}
         </div>
       </div>
     </div>
